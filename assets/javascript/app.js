@@ -29,9 +29,9 @@ $(".sports").on("click", function () {
     var sports = $(this).attr("data-name");
     // var sports = $(".sports").val();
     console.log(sports); 
+
+
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=sports&api_key=iUtiXYQ7vUQFZHEn1OCJ7NJayuaxQ7GK&limit=10";
-
-
 
     $.ajax({
         url: queryURL,
@@ -44,7 +44,7 @@ $(".sports").on("click", function () {
 
         
         for (var i = 0; i < sportsTeams.length; i++) {
-                    
+         
             console.log(response);
 
             // var sports = $(this).attr("rating"); 
@@ -54,7 +54,7 @@ $(".sports").on("click", function () {
             //create divs
             var sportsDiv = $("<div>");
             //create rating paragraph 
-            var p = $("p").text("Rating :" + response.data[i].rating);
+            var p = $("<p>").text("Rating :" + response.data[i].rating);
             //create image
             var sportsImage = $("<img>");
             sportsImage.addClass("image"); 
